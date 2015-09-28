@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weatherforecast>
+<title>weather forecast xml</title>
+<link>http://www.drk7.jp/weather/xml/13.xml</link>
+<description>気象庁の天気予報情報を XML で配信。1日1回 AM 6:00 ごろ更新。</description>
+<pubDate>Tue, 22 Sep 2015 18:00:01 +0900</pubDate> 
+<author>気象庁</author>
+<managingEditor>drk7.jp</managingEditor>
+<pref id="東京都">
+
+    <area id="伊豆諸島北部">
+    <geo>
+        <long>139.3803</long>
+        <lat>34.7358</lat>
+    </geo>
+    
+    <info date="2015/09/22">
+        <weather>くもり時々晴れ</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/201.gif</img>
+        <weather_detail>北東の風　晴れ　夜遅く　くもり</weather_detail>
+        <wave>波　２メートル</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/23">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        <weather_detail>北東の風　やや強く　くもり　時々　晴れ</weather_detail>
+        <wave>波　２メートル</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">0</period>
+        <period hour="06-12">0</period>
+        <period hour="12-18">0</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/24">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">20</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">40</period>
+        <period hour="06-12">40</period>
+        <period hour="12-18">40</period>
+        <period hour="18-24">40</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/25">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/26">
+        <weather>くもり時々雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/203.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">20</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">70</period>
+        <period hour="06-12">70</period>
+        <period hour="12-18">70</period>
+        <period hour="18-24">70</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/27">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">19</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">50</period>
+        <period hour="06-12">50</period>
+        <period hour="12-18">50</period>
+        <period hour="18-24">50</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/28">
+        <weather>晴れ時々くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/101.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">19</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+</area>
+    <area id="伊豆諸島南部">
+    <geo>
+        <long>139.8418</long>
+        <lat>33.2419</lat>
+    </geo>
+    
+    <info date="2015/09/22">
+        <weather>くもり時々晴れ</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/201.gif</img>
+        <weather_detail>北東の風　やや強く　くもり</weather_detail>
+        <wave>波　２．５メートル　うねり　を伴う</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/23">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        <weather_detail>北東の風　やや強く　のち　東の風　やや強く　くもり</weather_detail>
+        <wave>波　２．５メートル　うねり　を伴う</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/24">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">20</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">40</period>
+        <period hour="06-12">40</period>
+        <period hour="12-18">40</period>
+        <period hour="18-24">40</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/25">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">26</range>
+        <range centigrade="min">21</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/26">
+        <weather>くもり時々雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/203.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">20</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">70</period>
+        <period hour="06-12">70</period>
+        <period hour="12-18">70</period>
+        <period hour="18-24">70</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/27">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">19</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">50</period>
+        <period hour="06-12">50</period>
+        <period hour="12-18">50</period>
+        <period hour="18-24">50</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/28">
+        <weather>晴れ時々くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/101.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">19</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+</area>
+    <area id="小笠原諸島">
+    <geo>
+        <long>142.2208</long>
+        <lat>27.0714</lat>
+    </geo>
+    
+    <info date="2015/09/22">
+        <weather>くもり時々晴れ</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/201.gif</img>
+        <weather_detail>東の風　のち　やや強く　晴れ　夜のはじめ頃　くもり</weather_detail>
+        <wave>波　１．５メートル　のち　２メートル</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">29</range>
+        <range centigrade="min">25</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">20</period>
+        <period hour="12-18">30</period>
+        <period hour="18-24">30</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/23">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        <weather_detail>東の風　やや強く　くもり　一時　雨</weather_detail>
+        <wave>波　２．５メートル　のち　３メートル　うねり　を伴う</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">29</range>
+        <range centigrade="min">25</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">20</period>
+        <period hour="12-18">30</period>
+        <period hour="18-24">30</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/24">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">30</range>
+        <range centigrade="min">25</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/25">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">30</range>
+        <range centigrade="min">26</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/26">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">30</range>
+        <range centigrade="min">26</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">50</period>
+        <period hour="06-12">50</period>
+        <period hour="12-18">50</period>
+        <period hour="18-24">50</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/27">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">30</range>
+        <range centigrade="min">26</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">40</period>
+        <period hour="06-12">40</period>
+        <period hour="12-18">40</period>
+        <period hour="18-24">40</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/28">
+        <weather>くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/200.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">29</range>
+        <range centigrade="min">26</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">40</period>
+        <period hour="06-12">40</period>
+        <period hour="12-18">40</period>
+        <period hour="18-24">40</period>
+        </rainfallchance>
+    </info>
+</area>
+    <area id="東京地方">
+    <geo>
+        <long>139.7498</long>
+        <lat>35.6862</lat>
+    </geo>
+    
+    <info date="2015/09/22">
+        <weather>晴れ時々くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/101.gif</img>
+        <weather_detail>東の風　晴れ　夜遅く　くもり</weather_detail>
+        <wave>波　０．５メートル</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">27</range>
+        <range centigrade="min">18</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">0</period>
+        <period hour="06-12">0</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/23">
+        <weather>晴れ時々くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/101.gif</img>
+        <weather_detail>北東の風　のち　東の風　晴れ　時々　くもり</weather_detail>
+        <wave>波　０．５メートル</wave>
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">16</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">0</period>
+        <period hour="06-12">0</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/24">
+        <weather>くもり時々晴れ</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/201.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">24</range>
+        <range centigrade="min">17</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">30</period>
+        <period hour="06-12">30</period>
+        <period hour="12-18">30</period>
+        <period hour="18-24">30</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/25">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">23</range>
+        <range centigrade="min">18</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/26">
+        <weather>くもり一時雨</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/202.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">23</range>
+        <range centigrade="min">18</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">60</period>
+        <period hour="06-12">60</period>
+        <period hour="12-18">60</period>
+        <period hour="18-24">60</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/27">
+        <weather>くもり時々晴れ</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/201.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">25</range>
+        <range centigrade="min">18</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">20</period>
+        <period hour="06-12">20</period>
+        <period hour="12-18">20</period>
+        <period hour="18-24">20</period>
+        </rainfallchance>
+    </info>
+    <info date="2015/09/28">
+        <weather>晴れ時々くもり</weather>
+        <img>http://www.drk7.jp/MT/images/MTWeather/101.gif</img>
+        
+        
+        <temperature unit="摂氏">
+        <range centigrade="max">24</range>
+        <range centigrade="min">18</range>
+        </temperature>
+        <rainfallchance unit="％">
+        <period hour="00-06">10</period>
+        <period hour="06-12">10</period>
+        <period hour="12-18">10</period>
+        <period hour="18-24">10</period>
+        </rainfallchance>
+    </info>
+</area>
+</pref>
+</weatherforecast>

@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/app/WeekTenkiInfo.java=sjis
+encoding//src/reader/XmlReader.java=sjis
 encoding//src/searchSetting.properties=UTF-8
+encoding/<project>=sjis

@@ -1,7 +1,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class WeekTenkiInfo {
 
@@ -15,12 +14,6 @@ public class WeekTenkiInfo {
 
 	@Override
 	public String toString() {
-		String msgTop;
-		String msgBttom;
-		
-		
-		
-		
 		return "Åy" + prefectures + "(" + area + ")";
 	}
 

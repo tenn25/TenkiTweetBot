@@ -1,6 +1,14 @@
 package app;
 
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,9 +19,16 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.HashMap;
+
+import javax.imageio.ImageIO;
 
 import reader.PropertyFileReader;
 import reader.XmlReader;
+import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.User;
@@ -60,9 +75,70 @@ public class App {
 		XmlReader reader = new XmlReader();
 		reader.domRead("tokyotenki.xml",info);
         
+
 		
+        //Java2D
+        /* 画像の上に半透明のぼやけた文字列を描画する */
+
+        BufferedImage img = ImageIO.read(new File("/Users/ryosuke/Desktop/workspace/Cf7MZggUIAAV-2k.jpg"));
+        Graphics2D gr = img.createGraphics();
+
+        /* 文字列描画用のBufferedImageを作成 */
+        BufferedImage img2 = new BufferedImage(
+            img.getWidth(), img.getHeight(),
+            BufferedImage.TYPE_INT_ARGB_PRE
+        );
+        Graphics2D gr2 = img2.createGraphics();
+        /* 文字列を描画 */
+        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
+        gr2.drawString("■東京都6/14の天気", 5, 20);
+        gr2.drawString("南東の風　くもり　所により　夜　雨", 5, 60);
+        gr2.drawString("■気温", 5, 100);
+        gr2.drawString("最高：27℃", 5, 140);
+        gr2.drawString("最低：18℃", 5, 180);
+        gr2.drawString("■降水確率", 5, 220);
+        gr2.drawString("00~：0%", 5, 260);
+        gr2.drawString("06~：10%", 5, 300);
+        gr2.drawString("12~：20%", 5, 340);
+        gr2.drawString("18~：30%", 5, 380);
+        
+        gr2.setColor(new Color(0xff, 0xff, 0xff, 0xf0));
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
+        gr2.drawString("■東京都6/14の天気", 7, 21);
+        gr2.drawString("南東の風　くもり　所により　夜　雨", 7, 61);
+        gr2.drawString("■気温", 7, 101);
+        gr2.drawString("最高：27℃", 7, 141);
+        gr2.drawString("最低：18℃", 7, 181);
+        gr2.drawString("■降水確率", 7, 221);
+        gr2.drawString("00~：0%", 7, 261);
+        gr2.drawString("06~：10%", 7, 301);
+        gr2.drawString("12~：20%", 7, 341);
+        gr2.drawString("18~：30%", 7, 381);
+        
+        
+        gr2.dispose();
+
+        //文字
+        gr.drawImage(img2, 0, 0, null);
+        gr.dispose();
+
+        ImageIO.write(img, "jpg", new File("test.jpg"));
+        
+        
+		//画像付きのツイートをする。
+		FileSystem fs = FileSystems.getDefault();
+        Path path = fs.getPath("test.jpg");
+        File file = path.toFile();
+        
+        
+        
+        //画像付きツイート
+        //twitter.updateStatus(new StatusUpdate("文字付き画像ツイートてすと！").media(file));
+        
 		//ついーとしてみる
-        twitter.updateStatus(info.toString());
+		//twitter.updateStatus("てすと。");
+		twitter.updateStatus(info.toString());
         System.out.println(info.toString());
 	}
 	

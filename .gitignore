@@ -1,1 +1,5 @@
 twitter4j.properties
+.lock
+.log
+.metadata/
+RemoteSystemsTempFiles/.project

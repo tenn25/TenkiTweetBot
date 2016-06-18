@@ -4,11 +4,7 @@ package app;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
-import java.awt.image.ConvolveOp;
-import java.awt.image.Kernel;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -22,7 +18,6 @@ import java.net.URL;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
@@ -75,12 +70,28 @@ public class App {
 		XmlReader reader = new XmlReader();
 		reader.domRead("tokyotenki.xml",info);
         
-
-		
+		//指定のフォルダからランダムに画像を取得
+		String SearchPath = "/Users/ryosuke/Desktop/workspace/Apps/TwitterBot/TenkiTweetBot/chara/";
+	    File dir = new File(SearchPath);
+		File[] files = dir.listFiles();
+	    
+	    
+		int a = (int)(Math.random() * files.length);
+	    String imgPath = files[a].getName();
+	    		
+	    StringBuffer buf = new StringBuffer();
+	    buf.append(SearchPath);
+	    buf.append(imgPath);
+	    String inputImgPath = buf.toString();
+	    
+	    
+	    System.out.println(files.length);
+	    System.out.println(a);
+	    System.out.println(inputImgPath);
         //Java2D
         /* 画像の上に半透明のぼやけた文字列を描画する */
 
-        BufferedImage img = ImageIO.read(new File("/Users/ryosuke/Desktop/workspace/Cf7MZggUIAAV-2k.jpg"));
+        BufferedImage img = ImageIO.read(new File(inputImgPath));
         Graphics2D gr = img.createGraphics();
 
         /* 文字列描画用のBufferedImageを作成 */
@@ -88,34 +99,94 @@ public class App {
             img.getWidth(), img.getHeight(),
             BufferedImage.TYPE_INT_ARGB_PRE
         );
+        
+        int imgWidth = img.getWidth();
+        int imgHeight = img.getHeight();
+        
+        int fontSize = 45;
+        int padding = 13;
+        int startWidth = 20;//文字の開始位置(左から)
+        int startHeight = 0;//文字の開始位置(上から)
+        int diffSize1 = -2;//何pxずらすか
+        int diffSize2 = 2;//何pxずらすか
+        System.out.println(imgHeight);
+        System.out.println(imgWidth);
         Graphics2D gr2 = img2.createGraphics();
         /* 文字列を描画 */
-        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));
-        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-        gr2.drawString("■東京都6/14の天気", 5, 20);
-        gr2.drawString("南東の風　くもり　所により　夜　雨", 5, 60);
-        gr2.drawString("■気温", 5, 100);
-        gr2.drawString("最高：27℃", 5, 140);
-        gr2.drawString("最低：18℃", 5, 180);
-        gr2.drawString("■降水確率", 5, 220);
-        gr2.drawString("00~：0%", 5, 260);
-        gr2.drawString("06~：10%", 5, 300);
-        gr2.drawString("12~：20%", 5, 340);
-        gr2.drawString("18~：30%", 5, 380);
         
-        gr2.setColor(new Color(0xff, 0xff, 0xff, 0xf0));
-        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
-        gr2.drawString("■東京都6/14の天気", 7, 21);
-        gr2.drawString("南東の風　くもり　所により　夜　雨", 7, 61);
-        gr2.drawString("■気温", 7, 101);
-        gr2.drawString("最高：27℃", 7, 141);
-        gr2.drawString("最低：18℃", 7, 181);
-        gr2.drawString("■降水確率", 7, 221);
-        gr2.drawString("00~：0%", 7, 261);
-        gr2.drawString("06~：10%", 7, 301);
-        gr2.drawString("12~：20%", 7, 341);
-        gr2.drawString("18~：30%", 7, 381);
+        //左上
+        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));//黒地
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
+        gr2.drawString("■" + info.getPrefectures() + info.getDate() + "の天気", startWidth + diffSize1, startHeight + (padding + fontSize) * 1 + diffSize1);
+        gr2.drawString(info.getWeatherDetail(), startWidth + diffSize1, startHeight + (padding + fontSize) * 2 + diffSize1);
+        gr2.drawString("■気温", startWidth + diffSize1, imgHeight - (padding + fontSize) * 8 + fontSize + diffSize1);
+        gr2.drawString("最高：" + info.getMaxTemperature() + "℃", startWidth + diffSize1, imgHeight - (padding + fontSize) * 7 + fontSize + diffSize1);
+        gr2.drawString("最低：" + info.getMinTemperature() + "℃", startWidth + diffSize1, imgHeight - (padding + fontSize) * 6 + fontSize + diffSize1);
+        gr2.drawString("■降水確率", startWidth + diffSize1, imgHeight - (padding + fontSize) * 5 + fontSize + diffSize1);
+        gr2.drawString("00~：" + info.getRainfallchance00() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 4 + fontSize + diffSize1);
+        gr2.drawString("06~：" + info.getRainfallchance06() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 3 + fontSize + diffSize1);
+        gr2.drawString("12~：" + info.getRainfallchance12() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 2 + fontSize + diffSize1);
+        gr2.drawString("18~：" + info.getRainfallchance18() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 1 + fontSize + diffSize1);
         
+        //右上
+        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));//黒地
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
+        gr2.drawString("■" + info.getPrefectures() + info.getDate() + "の天気", startWidth + diffSize2, startHeight + (padding + fontSize) * 1 + diffSize1);
+        gr2.drawString(info.getWeatherDetail(), startWidth + diffSize2, startHeight + (padding + fontSize) * 2+ diffSize1);
+        gr2.drawString("■気温", startWidth + diffSize2, imgHeight - (padding + fontSize) * 8 + fontSize + diffSize1);
+        gr2.drawString("最高：" + info.getMaxTemperature() + "℃", startWidth + diffSize2, imgHeight - (padding + fontSize) * 7 + fontSize + diffSize1);
+        gr2.drawString("最低：" + info.getMinTemperature() + "℃", startWidth + diffSize2, imgHeight - (padding + fontSize) * 6 + fontSize + diffSize1);
+        gr2.drawString("■降水確率", startWidth + diffSize2, imgHeight - (padding + fontSize) * 5 + fontSize + diffSize1);
+        gr2.drawString("00~：" + info.getRainfallchance00() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 4 + fontSize + diffSize1);
+        gr2.drawString("06~：" + info.getRainfallchance06() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 3 + fontSize + diffSize1);
+        gr2.drawString("12~：" + info.getRainfallchance12() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 2 + fontSize + diffSize1);
+        gr2.drawString("18~：" + info.getRainfallchance18() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 1 + fontSize + diffSize1);
+       
+        //左下
+        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));//黒地
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
+        gr2.drawString("■" + info.getPrefectures() + info.getDate() + "の天気", startWidth + diffSize1, startHeight + (padding + fontSize) * 1 + diffSize2);
+        gr2.drawString(info.getWeatherDetail(), startWidth + diffSize1, startHeight + (padding + fontSize) * 2 + diffSize2);
+        gr2.drawString("■気温", startWidth + diffSize1, imgHeight - (padding + fontSize) * 8 + fontSize + diffSize2);
+        gr2.drawString("最高：" + info.getMaxTemperature() + "℃", startWidth + diffSize1, imgHeight - (padding + fontSize) * 7 + fontSize + diffSize2);
+        gr2.drawString("最低：" + info.getMinTemperature() + "℃", startWidth + diffSize1, imgHeight - (padding + fontSize) * 6 + fontSize + diffSize2);
+        gr2.drawString("■降水確率", startWidth + diffSize1, imgHeight - (padding + fontSize) * 5 + fontSize + diffSize2);
+        gr2.drawString("00~：" + info.getRainfallchance00() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 4 + fontSize + diffSize2);
+        gr2.drawString("06~：" + info.getRainfallchance06() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 3 + fontSize + diffSize2);
+        gr2.drawString("12~：" + info.getRainfallchance12() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 2 + fontSize + diffSize2);
+        gr2.drawString("18~：" + info.getRainfallchance18() + "%", startWidth + diffSize1, imgHeight - (padding + fontSize) * 1 + fontSize + diffSize2);
+  
+        //右下
+        gr2.setColor(new Color(0x00, 0x00, 0x00, 0xf0));//黒地
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
+        gr2.drawString("■" + info.getPrefectures() + info.getDate() + "の天気", startWidth + diffSize2, startHeight + (padding + fontSize) * 1 + diffSize2);
+        gr2.drawString(info.getWeatherDetail(), startWidth + diffSize2, startHeight + (padding + fontSize) * 2 + diffSize2);
+        gr2.drawString("■気温", startWidth + diffSize2, imgHeight - (padding + fontSize) * 8 + fontSize + diffSize2);
+        gr2.drawString("最高：" + info.getMaxTemperature() + "℃", startWidth + diffSize2, imgHeight - (padding + fontSize) * 7 + fontSize + diffSize2);
+        gr2.drawString("最低：" + info.getMinTemperature() + "℃", startWidth + diffSize2, imgHeight - (padding + fontSize) * 6 + fontSize + diffSize2);
+        gr2.drawString("■降水確率", startWidth + diffSize2, imgHeight - (padding + fontSize) * 5 + fontSize + diffSize2);
+        gr2.drawString("00~：" + info.getRainfallchance00() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 4 + fontSize + diffSize2);
+        gr2.drawString("06~：" + info.getRainfallchance06() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 3 + fontSize + diffSize2);
+        gr2.drawString("12~：" + info.getRainfallchance12() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 2 + fontSize + diffSize2);
+        gr2.drawString("18~：" + info.getRainfallchance18() + "%", startWidth + diffSize2, imgHeight - (padding + fontSize) * 1 + fontSize + diffSize2);
+      
+        
+        
+        gr2.setColor(new Color(0xff, 0xff, 0xff, 0xf0));//白地
+        gr2.setFont(new Font(Font.DIALOG, Font.BOLD, fontSize));
+        gr2.drawString("■" + info.getPrefectures() + info.getDate() + "の天気", startWidth, startHeight + (padding + fontSize) * 1);
+        gr2.drawString(info.getWeatherDetail(), startWidth, startHeight + (padding + fontSize) * 2);
+        gr2.drawString("■気温", startWidth, imgHeight - (padding + fontSize) * 8 + fontSize );
+        gr2.drawString("最高：" + info.getMaxTemperature() + "℃", startWidth, imgHeight - (padding + fontSize) * 7 + fontSize);
+        gr2.drawString("最低：" + info.getMinTemperature() + "℃", startWidth, imgHeight - (padding + fontSize) * 6 + fontSize);
+        gr2.drawString("■降水確率", startWidth, imgHeight - (padding + fontSize) * 5 + fontSize);
+        gr2.drawString("00~：" + info.getRainfallchance00() + "%", startWidth, imgHeight - (padding + fontSize) * 4 + fontSize);
+        gr2.drawString("06~：" + info.getRainfallchance06() + "%", startWidth, imgHeight - (padding + fontSize) * 3 + fontSize);
+        gr2.drawString("12~：" + info.getRainfallchance12() + "%", startWidth, imgHeight - (padding + fontSize) * 2 + fontSize);
+        gr2.drawString("18~：" + info.getRainfallchance18() + "%", startWidth, imgHeight - (padding + fontSize) * 1 + fontSize);
+        
+        
+         
         
         gr2.dispose();
 
@@ -123,22 +194,22 @@ public class App {
         gr.drawImage(img2, 0, 0, null);
         gr.dispose();
 
-        ImageIO.write(img, "jpg", new File("test.jpg"));
+        ImageIO.write(img, "png", new File("test2.png"));
         
         
 		//画像付きのツイートをする。
 		FileSystem fs = FileSystems.getDefault();
-        Path path = fs.getPath("test.jpg");
+        Path path = fs.getPath("test2.png");
         File file = path.toFile();
         
         
         
         //画像付きツイート
-        //twitter.updateStatus(new StatusUpdate("文字付き画像ツイートてすと！").media(file));
+        twitter.updateStatus(new StatusUpdate(info.getDate() + "の" + info.getPrefectures() + "の天気だよ" ).media(file));
         
 		//ついーとしてみる
 		//twitter.updateStatus("てすと。");
-		twitter.updateStatus(info.toString());
+		//twitter.updateStatus(info.toString());
         System.out.println(info.toString());
 	}
 	

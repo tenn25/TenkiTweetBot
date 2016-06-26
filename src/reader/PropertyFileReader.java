@@ -17,6 +17,7 @@ public class PropertyFileReader {
 	private String accountName;
 	private String wheatherInfoPath;
 	private String wheatherDataPath;
+	private String imageSourcePath;
 
 	public PropertyFileReader(String propertyFilePass) {
 		try {
@@ -28,6 +29,8 @@ public class PropertyFileReader {
 			accountName = bundle.getString("accountName");
 			wheatherInfoPath = bundle.getString("wheatherInfoPath");
 			wheatherDataPath = bundle.getString("wheatherDataPath");
+			
+			//imageSourcePath = bundle.getString("imageSourcePath");
 			
 
 			
@@ -49,6 +52,9 @@ public class PropertyFileReader {
 		return wheatherDataPath;
 	}
 
+	public String getImageSourcePath() {
+		return imageSourcePath;
+	}
 	
 
 	private static ResourceBundle.Control UTF8_ENCODING_CONTROL = new ResourceBundle.Control() {

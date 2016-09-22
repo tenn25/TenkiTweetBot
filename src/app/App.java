@@ -63,14 +63,14 @@ public class App {
 		reader.domRead("tokyotenki.xml",info);
         
 		//指定のフォルダからランダムに画像を取得
-		//String SearchPath = "/Users/ryosuke/Desktop/workspace/Apps/TwitterBot/TenkiTweetBot/chara/";
-		String SearchPath = "/home/endo_ry/workspace/TenkiTweetBot/chara/";
+		String SearchPath = "/Users/ryosuke/Desktop/workspace/Apps/TwitterBot/TenkiTweetBot/chara/";
+		//String SearchPath = "/home/endo_ry/workspace/TenkiTweetBot/chara/";
 		System.out.println(SearchPath);
 		
 		File dir = new File(SearchPath);
 	    
 		File[] files = dir.listFiles();
-	    
+	    System.out.println(files.length);
 	    
 		int a = (int)(Math.random() * files.length);
 	    String imgPath = files[a].getName();

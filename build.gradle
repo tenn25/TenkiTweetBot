@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'app.App'
+def executableBaseName = "gradleTest"
+
+dependencies {
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('src/main/java/app/lib/twitter4j-core-4.0.2.jar')
+    compile files('src/main/java/app/lib/aws-java-sdk-1.11.18.jar')
+    compile files('src/main/java/app/lib/commons-logging-1.1.3.jar')
+    
+}
+
+
+def fileame = "$rootDir/searchSetting.properties"
+//ルートディレクトリのプロパティファイルの読み込み
+def loadProperties(filename) {
+    def props = new Properties()
+    file(filename).withInputStream {
+        props.load(it)
+    }
+    ext.props = props//プロジェクト全体から見えるようにする
+    println "props.accountName = ${props.accountName}"
+    println "props.wheatherInfoPath = ${props.wheatherInfoPath}"
+    println "props.wheatherDataPath = ${props.wheatherDataPath}"
+    println "props.imageSourcePath = ${props.imageSourcePath}"
+}
+
+//実行可能jarの作成
+task executableJar(type: Jar, dependsOn: jar)  {
+    archiveName = "${executableBaseName}.jar"
+    manifest {
+        attributes 'Main-Class' : mainClassName
+    }
+
+    from configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+    from "$buildDir/classes/main"
+    from "$buildDir/resources/main"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'sjis'
+}

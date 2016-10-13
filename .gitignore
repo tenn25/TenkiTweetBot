@@ -1,0 +1,12 @@
+/build/
+/bin/
+/searchSetting.properties
+/TenkiTweetBot.jar
+/twitter4j.properties
+/aws.properties
+/.classpath
+/.DS_Store
+/.git/
+/.gradle/
+/.project
+/.settings/

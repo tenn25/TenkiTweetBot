@@ -1,4 +1,4 @@
-package app;
+package main.java.app;
 
 
 import java.awt.Color;
@@ -21,11 +21,11 @@ import java.nio.file.Path;
 
 import javax.imageio.ImageIO;
 
-import reader.PropAwsKeys;
-import reader.PropSearchKeys;
-import reader.PropertyReader;
-import reader.S3Reader;
-import reader.XmlReader;
+import main.java.reader.PropAwsKeys;
+import main.java.reader.PropSearchKeys;
+import main.java.reader.PropertyReader;
+import main.java.reader.S3Reader;
+import main.java.reader.XmlReader;
 import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;

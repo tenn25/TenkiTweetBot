@@ -1,4 +1,4 @@
-package reader;
+package main.java.reader;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class S3Reader {

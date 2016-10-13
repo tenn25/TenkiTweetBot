@@ -1,4 +1,4 @@
-package reader;
+package main.java.reader;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import app.TenkiInfo;
+import main.java.app.TenkiInfo;
 
 public class XmlReader {
 	public void domRead(String file,TenkiInfo info) throws SAXException, IOException, ParserConfigurationException {

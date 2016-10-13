@@ -1,4 +1,4 @@
-package reader;
+package main.java.reader;
 import java.io.File;
 import java.util.Properties;
 
